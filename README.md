@@ -1,23 +1,55 @@
-# Quasar App (-)
+# PayFlow - Gestión de Métodos de Pago
 
-## Install the dependencies
+Este proyecto es una aplicación frontend desarrollada para la gestión interactiva de métodos de pago.
 
+## Stack Tecnológico
+- **Vue 3** (Composition API con script setup)
+- **Quasar Framework v2** (Vite 3)
+- **Pinia** (Manejo de estado)
+- **TypeScript** (Tipado estricto)
+- **Sass/SCSS** (Estilos)
+
+---
+
+## Requisitos Previos
+- **Node.js**: v22.22.0 o superior (recomendado para compatibilidad con la versión actual de `@quasar/app-vite`)
+- **NPM**: v10 o superior
+
+---
+
+## Instalación y Configuración
+
+1. Clonar el repositorio.
+2. Instalar las dependencias del proyecto:
+   ```bash
+   npm install
+   ```
+
+---
+
+## Comandos Disponibles
+
+### Desarrollo
+Para levantar el servidor de desarrollo local con recarga en caliente (Hot Module Replacement):
 ```bash
-pnpm install
-# or: yarn/npm/bun install
+npm run dev
+```
+La aplicación estará disponible por defecto en: [http://localhost:9000](http://localhost:9000)
+
+### Compilación para Producción
+Para generar el bundle optimizado listo para producción:
+```bash
+npm run build
 ```
 
-### Start the app in development mode (HMR, error reporting, etc.)
-
+### Verificación de Tipos
+Para verificar que el tipado estricto de TypeScript compila correctamente sin errores:
 ```bash
-quasar dev
+npm run typecheck
 ```
 
-### Build the app for production
-
+### Linter y Formateo
+Para formatear el código y verificar reglas de estilo (ESLint + Prettier):
 ```bash
-quasar build
+npm run lint
 ```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
