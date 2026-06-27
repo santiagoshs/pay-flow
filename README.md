@@ -7,9 +7,8 @@ Este proyecto es una aplicación frontend desarrollada con Vue 3, Pinia y Quasar
 Para emular una arquitectura real cliente-servidor sin implementar un backend físico, se diseñaron las siguientes capas desacopladas:
 
 1. **Capa de Persistencia (IndexedDB)**:
-   - Implementada nativamente en [db.ts](file:///Users/santiagoshs/Code/pay-flow/src/services/db.ts) para evitar la instalación de librerías externas de terceros (respetando la restricción del proyecto).
+   - Implementada nativamente en [db.ts](file:///Users/santiagoshs/Code/pay-flow/src/services/db.ts) para evitar la instalación de librerías externas de terceros.
    - Crea y maneja la base de datos `payflow_db`, inicializando credenciales por defecto (`admin` / `admin123`) y 5 métodos de pago de semilla.
-   
 2. **Capa de Simulación de Red (Axios + Custom Adapter)**:
    - Configurada en [axios.ts](file:///Users/santiagoshs/Code/pay-flow/src/boot/axios.ts).
    - Intercepta las llamadas del cliente Axios `/api/*` y las resuelve consultando/escribiendo en IndexedDB.
@@ -24,38 +23,59 @@ Para emular una arquitectura real cliente-servidor sin implementar un backend f�
    - Diálogos y filtros genéricos comunicados mediante contratos estrictos de TypeScript (`Props` y `Emits`).
    - Validación integrada mediante los campos nativos `:rules` de Quasar, sin necesidad de dependencias de validación externas.
 
+## Requisitos Previos
+
+- **Node.js**: v22.22.0 o superior (necesario para compatibilidad con la versión actual de `@quasar/app-vite`).
+- **NPM**: v10 o superior.
+
+---
+
+## Instalación y Configuración
+
+1. Instalar las dependencias del proyecto:
+   ```bash
+   npm install
+   ```
+
 ---
 
 ## Credenciales de Prueba
 
 Al iniciar la aplicación por primera vez, IndexedDB se autosembrará con la siguiente cuenta:
+
 - **Usuario**: `admin`
 - **Contraseña**: `admin123`
 
-*Nota: La aplicación dispone de una sección de registro en la pantalla de inicio de sesión para crear nuevos usuarios reales persistidos en IndexedDB.*
+_Nota: La aplicación dispone de una sección de registro en la pantalla de inicio de sesión para crear nuevos usuarios reales persistidos en IndexedDB._
 
 ---
 
 ## Comandos Disponibles
 
 ### Levantar Servidor de Desarrollo
+
 ```bash
 npm run dev
 ```
+
 La aplicación estará disponible por defecto en: [http://localhost:9000](http://localhost:9000)
 
 ### Pruebas Unitarias (Vitest)
+
 Para ejecutar la suite de pruebas unitarias de los componentes y los stores:
+
 ```bash
 npm run test:unit
 ```
 
 ### Verificación de TypeScript
+
 ```bash
 npm run typecheck
 ```
 
 ### Linter y Estilos (ESLint + Prettier)
+
 ```bash
 npm run lint:check
 ```
