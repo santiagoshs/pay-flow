@@ -1,1 +1,73 @@
-// app global css
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+// Set global font family
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f7fafc;
+  color: #2d3748;
+}
+
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+
+// Global button transitions
+.q-btn {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 500;
+  
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+// Global card customizations
+.q-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+// Global input customizations (Apple feel: clean inputs)
+.q-field--outlined {
+  .q-field__control {
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    
+    &:before {
+      border: 1px solid rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &.q-field--focused {
+    .q-field__control {
+      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.15);
+    }
+  }
+}
+
+// Table borders and headers
+.q-table__container {
+  border-radius: 12px;
+}
+
+// Payment list specific styles
+.table-card {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.action-btn {
+  border-radius: 8px;
+}
+
+.payments-table {
+  .q-table__th {
+    font-weight: 700;
+    color: #4a5568;
+    background-color: #f7fafc;
+  }
+}
